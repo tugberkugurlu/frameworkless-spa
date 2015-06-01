@@ -1,0 +1,21 @@
+{
+  "name": "frameworkless-spa",
+  "version": "1.0.0",
+  "authors": [
+    "tugberkugurlu <tugberkugurlu@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "requirejs": "~2.1.18",
+    "requirejs-text": "~2.0.14"
+  }
+}
