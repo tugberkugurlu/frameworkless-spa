@@ -2,11 +2,22 @@
     requirejs.config({
         paths: {
             'text': '../bower_components/requirejs-text/text',
-            'core': './core'  
+            'knockout': '../bower_components/knockout/dist/knockout',
+            'core': './core'
         }
     });
     
-    require(['core/config'], function (config) {
+    require(['core/config', 'knockout'], function (config, ko) {
         console.log(config.welcomeMessage);
+        
+        var App = function() {
+            var self = this;
+            self.welcomeMessage = ko.observable();  
+        };
+        
+        var app = new App()
+            .welcomeMessage(config.welcomeMessage);
+            
+        ko.applyBindings(app);
     });
 }());
