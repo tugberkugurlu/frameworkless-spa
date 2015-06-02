@@ -17,6 +17,7 @@
     "bootstrap": "~3.3.4",
     "requirejs": "~2.1.18",
     "requirejs-text": "~2.0.14",
-    "knockout": "~3.3.0"
+    "knockout": "~3.3.0",
+    "knockout-amd-helpers": "~0.7.4"
   }
 }
