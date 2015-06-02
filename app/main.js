@@ -13,11 +13,25 @@
         
         var App = function() {
             var self = this;
-            self.welcomeMessage = ko.observable();  
+            self.welcomeMessage = ko.observable();
+            self.todoList = ko.observableArray();
+            self.user = ko.observable();
         };
         
+        var User = function() {
+            var self = this;
+            self.name = ko.observable();
+            self.surname = ko.observable();
+        };
+        
+        var user = new User()
+            .name('tugberk')
+            .surname('ugurlu');
+        
         var app = new App()
-            .welcomeMessage(config.welcomeMessage);
+            .welcomeMessage(config.welcomeMessage)
+            .todoList(['foo', 'bar'])
+            .user(user);
             
         ko.applyBindings(app);
     });

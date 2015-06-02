@@ -13,10 +13,6 @@
             <hr />
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <span data-bind="text: welcomeMessage"></span>
-        </div>
-    </div>
+    <div data-bind="template: { name: 'home', with: user }"></div>
     <script src="bower_components/requirejs/require.js" data-main="app/main"></script>
 </body>
