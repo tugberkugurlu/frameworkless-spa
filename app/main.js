@@ -4,35 +4,25 @@
             'text': '../bower_components/requirejs-text/text',
             'knockout': '../bower_components/knockout/dist/knockout',
             "knockout-amd-helpers": "../bower_components/knockout-amd-helpers/build/knockout-amd-helpers",
-            'core': './core'
+            'core': './core',
+            'models': './models'
         }
     });
     
-    require(['core/config', 'knockout', 'knockout-amd-helpers'], function (config, ko) {
+    require(['core/config', 'knockout', 'core/app', 'core/module', 'models/user', 'knockout-amd-helpers'], function (config, ko, App, Module, User) {
         console.log(config.welcomeMessage);
         
-        var App = function() {
-            var self = this;
-            self.welcomeMessage = ko.observable();
-            self.todoList = ko.observableArray();
-            self.user = ko.observable();
-        };
+        var user = new User().name('tugberk').surname('ugurlu');
+        var app = new App().module(new Module('home', user));
         
-        var User = function() {
-            var self = this;
-            self.name = ko.observable();
-            self.surname = ko.observable();
-        };
+        window.setTimeout(function(){
+            var newModule = new Module('about');
+            window.setTimeout(function(){
+                newModule.viewModel('I am foo!');
+                app.module(newModule);
+            }, 1000);
+        }, 3000);
         
-        var user = new User()
-            .name('tugberk')
-            .surname('ugurlu');
-        
-        var app = new App()
-            .welcomeMessage(config.welcomeMessage)
-            .todoList(['foo', 'bar'])
-            .user(user);
-            
         ko.applyBindings(app);
     });
 }());

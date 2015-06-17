@@ -5,14 +5,13 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
 </head>
 <body>
-    <div class="row">
-        <div class="col-sm-6">
-            <hr />
-        </div>
-        <div class="col-sm-6">
-            <hr />
-        </div>
+    <header>
+        Frameworkless
+    </header>
+    <div role="main" data-bind="template: { name: module().name, data: module().viewModel }">
     </div>
-    <div data-bind="template: { name: 'home', data: user }"></div>
+    <footer>
+        Copyright and All that...
+    </footer>
     <script src="bower_components/requirejs/require.js" data-main="app/main"></script>
 </body>
