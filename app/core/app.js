@@ -2,7 +2,6 @@ define(['knockout', 'jquery'], function(ko, $) {
     var ctor = function() {
         var self = this;
         self.module = ko.observable();
-        self.viewModel = ko.observable();
         
         self.hide = function(elem) { 
             if (elem.nodeType === 1) {
