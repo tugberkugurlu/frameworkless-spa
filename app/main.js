@@ -3,7 +3,8 @@
         paths: {
             'text': '../bower_components/requirejs-text/text',
             'knockout': '../bower_components/knockout/dist/knockout',
-            "knockout-amd-helpers": "../bower_components/knockout-amd-helpers/build/knockout-amd-helpers",
+            'knockout-amd-helpers': '../bower_components/knockout-amd-helpers/build/knockout-amd-helpers',
+            'jquery': '../bower_components/jquery/dist/jquery',
             'core': './core',
             'models': './models'
         }

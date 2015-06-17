@@ -8,7 +8,7 @@
     <header>
         Frameworkless
     </header>
-    <div role="main" data-bind="template: { name: module().name, data: module().viewModel }">
+    <div role="main" data-bind="template: { beforeRemove: hide, name: module().name, data: module().viewModel }">
     </div>
     <footer>
         Copyright and All that...
